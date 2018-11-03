@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\UsersController;
 use App\Model\User;
 
 $router->add('GET','/', function () use ($container){
@@ -14,8 +15,5 @@ $router->add('GET','/projects', function (){
 });
 
 $router->add('GET','/users/(\d+)', function ($params) use ($container){
-    $user = new User($container);
-    $data = $user->get($params[1]);
-
-    return "My name is: " . $data['name'];
+    return (new UsersController($container))->show($params[1]);
 });
