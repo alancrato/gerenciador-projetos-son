@@ -6,17 +6,8 @@ require __DIR__.'/vendor/autoload.php';
 
 $router = new Router;
 
-$router->add('GET','/', function (){
-   return 'Home page';
-});
-
-$router->add('GET','/projects', function (){
-    return 'Projects page';
-});
-
-$router->add('GET','/projects/(\d+)', function ($params){
-    return 'Project page id:' . $params[1];
-});
+require __DIR__ .'/config/containers.php';
+require __DIR__ .'/config/routes.php';
 
 try{
     echo $router->run();
