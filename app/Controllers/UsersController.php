@@ -9,8 +9,6 @@ class UsersController
     public function show($container, $request)
     {
         $user = new User($container);
-        $data = $user->get($request->attibutes->get(1));
-
-        return "My name is: " . $data['name'];
+        return $user->get($request->attributes->get(1));
     }
 }

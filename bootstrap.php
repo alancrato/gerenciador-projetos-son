@@ -15,7 +15,7 @@ try{
     $response = new Response;
     $params = [
         'container' => $container,
-        'params' => $result['action']
+        'params' => $result['params']
     ];
     $response($result['action'], $params);
 }catch (\SON\Framework\Exceptions\HttpException $e){
